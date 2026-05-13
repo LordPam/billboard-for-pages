@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>love you back, ma cherie,</title>
+    <style>
+      :root {
+        --pink-1: #fff0f6;
+        --pink-2: #ffc2da;
+        --pink-3: #ff8fbd;
+        --pink-4: #f44f9c;
+        --pink-5: #8f1456;
+        --spritz: #ff8c32;
+        --spritz-deep: #ff6b1a;
+        --glass: rgba(255, 255, 255, 0.5);
+        --shadow: rgba(143, 20, 86, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.85), transparent 34%),
+          radial-gradient(circle at 20% 20%, rgba(255, 194, 218, 0.9), transparent 28%),
+          linear-gradient(145deg, var(--pink-1), var(--pink-2) 48%, var(--pink-3) 100%);
+        color: var(--pink-5);
+        font-family: "Didot", "Bodoni MT", "Palatino Linotype", serif;
+      }
+
+      main {
+        position: relative;
+        width: min(92vw, 900px);
+        min-height: min(78vh, 720px);
+        display: grid;
+        place-items: center;
+        padding: 3rem;
+      }
+
+      main::before,
+      main::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(2px);
+        z-index: 0;
+      }
+
+      main::before {
+        width: 18rem;
+        height: 18rem;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      main::after {
+        width: 24rem;
+        height: 24rem;
+        right: -4rem;
+        bottom: -4rem;
+        background: rgba(244, 79, 156, 0.15);
+      }
+
+      h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        max-width: 12ch;
+        text-align: center;
+        font-size: clamp(3.2rem, 9vw, 7.4rem);
+        font-weight: 600;
+        font-style: italic;
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+        text-shadow: 0 0.08em 0.25em rgba(255, 255, 255, 0.5);
+      }
+
+      .spritz {
+        position: absolute;
+        right: clamp(0.5rem, 3vw, 2rem);
+        bottom: clamp(0.5rem, 3vw, 2rem);
+        width: clamp(150px, 22vw, 220px);
+        aspect-ratio: 1 / 1.3;
+        z-index: 1;
+        transform: rotate(-8deg);
+        filter: drop-shadow(0 1.4rem 1.8rem var(--shadow));
+      }
+
+      .spritz .bowl {
+        position: absolute;
+        inset: 0 auto auto 13%;
+        width: 74%;
+        height: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.75);
+        border-radius: 1.4rem 1.4rem 3.4rem 3.4rem;
+        background:
+          linear-gradient(to top, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05)),
+          linear-gradient(to top, transparent 40%, rgba(255, 255, 255, 0.22) 40% 42%, transparent 42%),
+          linear-gradient(to top, var(--spritz-deep), var(--spritz) 68%, rgba(255, 217, 148, 0.95) 68%);
+        overflow: hidden;
+      }
+
+      .spritz .bowl::before,
+      .spritz .bowl::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.35);
+      }
+
+      .spritz .bowl::before {
+        width: 18%;
+        height: 12%;
+        left: 18%;
+        top: 42%;
+      }
+
+      .spritz .bowl::after {
+        width: 13%;
+        height: 9%;
+        right: 20%;
+        top: 50%;
+      }
+
+      .spritz .stem {
+        position: absolute;
+        left: 48%;
+        top: 49%;
+        width: 4px;
+        height: 28%;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .spritz .base {
+        position: absolute;
+        left: 33%;
+        bottom: 11%;
+        width: 34%;
+        height: 4%;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .spritz .orange {
+        position: absolute;
+        right: 10%;
+        top: 16%;
+        width: 22%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 30% 30%, rgba(255, 226, 153, 0.95), transparent 28%),
+          radial-gradient(circle, #ffcc62 15%, #ff9e24 16% 68%, #ea6b0f 69%);
+        border: 3px solid rgba(255, 243, 215, 0.85);
+      }
+
+      .spritz .straw {
+        position: absolute;
+        right: 28%;
+        top: 6%;
+        width: 4px;
+        height: 42%;
+        background: linear-gradient(to bottom, #ff8fbd, #ffe8f2);
+        border-radius: 999px;
+      }
+
+      @media (max-width: 700px) {
+        main {
+          min-height: 100vh;
+          padding: 2.5rem 1.5rem 9rem;
+        }
+
+        h1 {
+          max-width: 9ch;
+        }
+
+        .spritz {
+          right: 50%;
+          bottom: 1.25rem;
+          transform: translateX(50%) rotate(-4deg);
+          width: min(42vw, 180px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Billboard page: replace this file to swap the entire GitHub Pages site. -->
+    <main>
+      <h1>love you back, ma cherie,</h1>
+      <div class="spritz" aria-hidden="true">
+        <div class="bowl"></div>
+        <div class="stem"></div>
+        <div class="base"></div>
+        <div class="orange"></div>
+        <div class="straw"></div>
+      </div>
+    </main>
+  </body>
+</html>
